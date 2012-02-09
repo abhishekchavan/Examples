@@ -7,5 +7,6 @@
   <name>root</name>
   <modules>
   	<module>bezudar-webservice</module>
+  	<module>bezudar-jooq</module>
   </modules>
 </project>
