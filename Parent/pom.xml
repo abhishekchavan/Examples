@@ -9,5 +9,6 @@
   	<module>bezudar-webservice</module>
   	<module>bezudar-jooq</module>
   	<module>bezudar-hibernate</module>
+  	<module>bezudar-misc</module>
   </modules>
 </project>
