@@ -15,7 +15,6 @@ public class RequiresVolatileMain {
 			this.target = target;
 		}
 
-		@Override
 		public void run() {
 			int count = 0;
 			boolean logged = false;
