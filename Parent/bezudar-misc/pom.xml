@@ -30,5 +30,19 @@
 			<artifactId>guava</artifactId>
 			<version>11.0.1</version>
 		</dependency>
+		<dependency>
+			<groupId>vent.x</groupId>
+			<artifactId>vertx</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:\work\Libraries\vert.x-1.0.1.final\lib\jars\vert.x-core.jar</systemPath>
+		</dependency>
+		<dependency>
+			<groupId>vent.x</groupId>
+			<artifactId>vertx-platform</artifactId>
+			<version>1.0</version>
+			<scope>system</scope>
+			<systemPath>D:\work\Libraries\vert.x-1.0.1.final\lib\jars\vert.x-platform.jar</systemPath>
+		</dependency>
 	</dependencies>
 </project>
