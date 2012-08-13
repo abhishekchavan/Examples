@@ -8,13 +8,13 @@
       #map_canvas { height: 30% }
     </style>
     <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDNH68ZY74VT3rMMLCEZ7_E3MRPo-yXzV4&sensor=true">
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDNH68ZY74VT3rMMLCEZ7_E3MRPo-yXzV4&sensor=true&libraries=drawing">
     </script>
     <script type="text/javascript">
       function initialize() {
     	  var myLatlng = new google.maps.LatLng(26,77);
     	  var myOptions = {
-    	    zoom: 4,
+    	    zoom: 8,
     	    center: myLatlng,
     	    mapTypeId: google.maps.MapTypeId.ROADMAP
     	  }
@@ -25,7 +25,30 @@
     	      map: map,
     	      title:"Hello World!"
     	  });
+    	  
+    	  var drawingManager = new google.maps.drawing.DrawingManager({
+  			drawingMode : google.maps.drawing.OverlayType.MARKER,
+  			drawingControl : true,
+  			drawingControlOptions: {
+  				position : google.maps.ControlPosition.TOP_CENTER,
+  				drawingModes : [ google.maps.drawing.OverlayType.MARKER,
+  						google.maps.drawing.OverlayType.CIRCLE,google.maps.drawing.OverlayType.RECTANGLE,google.maps.drawing.OverlayType.POLYLINE,google.maps.drawing.OverlayType.POLYGON ]
+  			}
+  		});
+  		drawingManager.setMap(map);
+  		
+  		google.maps.event.addListener(drawingManager, 'overlaycomplete', function(event) {
+  		  if (event.type == google.maps.drawing.OverlayType.CIRCLE) {
+  		    var radius = event.overlay.getRadius();
+  		  } else if (event.type == google.maps.drawing.OverlayType.POLYGON){
+  			  console.log(event.overlay.getPaths());
+  		  } else if (event.type == google.maps.drawing.OverlayType.POLYLINE){
+  			console.log(event.overlay.getPaths());
+  		  } 
+  		});
       }
+      
+      
     	  
       
     </script>
